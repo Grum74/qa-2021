@@ -1,14 +1,23 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Allure.Steps;
+using OpenQA.Selenium;
 
 namespace TestProject1
 {
-    public class PetCreatePage : Base
+    public class PetCreatePage
     {
+        private IWebDriver driver;
+
         private OwnerDetailsPage ownerDetailsPage;
 
-        private IWebElement GoBackButton() => driver.FindElement(By.ClassName("goBack"));
+        public PetCreatePage(IWebDriver driver, OwnerDetailsPage ownerDetailsPage)
+        {
+            this.driver = driver;
+            this.ownerDetailsPage = ownerDetailsPage;
+        }
 
-        private IWebElement SavePetButton() => driver.FindElement(By.ClassName("savePet"));
+        private IWebElement GoBackButton() => driver.FindElement(By.CssSelector(".goBack"));
+
+        private IWebElement SavePetButton() => driver.FindElement(By.CssSelector(".savePet"));
 
         private IWebElement NameField() => driver.FindElement(By.Id("name"));
 
@@ -16,23 +25,22 @@ namespace TestProject1
 
         private IWebElement TypeSelect() => driver.FindElement(By.Id("type"));
 
-        public PetCreatePage(OwnerDetailsPage ownerDetailsPage)
-        {
-            this.ownerDetailsPage = ownerDetailsPage;
-        }
 
+        [AllureStep("Type pet name")]
         public PetCreatePage TypeName(string name)
         {
-            NameField().SendKeys(name);
+            Helpers.ClearAndType(NameField(), name);
             return this;
         }
 
+        [AllureStep("Type pet bitrh date")]
         public PetCreatePage TypeBitrhDate(string bitrhDate)
         {
-            BirthDateField().SendKeys(bitrhDate);
+            Helpers.ClearAndType(BirthDateField(), bitrhDate);
             return this;
         }
 
+        [AllureStep("Select pet type from the list")]
         public PetCreatePage SelectType(string option)
         {
             TypeSelect().Click();
@@ -40,12 +48,14 @@ namespace TestProject1
             return this;
         }
 
+        [AllureStep("Back to owner details page")]
         public OwnerDetailsPage GoBack()
         {
             GoBackButton().Click();
             return ownerDetailsPage;
         }
 
+        [AllureStep("Save new pet")]
         public OwnerDetailsPage SavePet()
         {
             SavePetButton().Click();

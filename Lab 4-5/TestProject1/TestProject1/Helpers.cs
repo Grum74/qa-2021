@@ -12,14 +12,14 @@ namespace TestProject1
             element.SendKeys(text);
         }
 
-        public static void Wait()
+        public static void Wait(int milliseconds = 5000)
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(milliseconds);
         }
 
         public static Size SetSize()
         {
-            return new System.Drawing.Size(1920, 1040);
+            return new Size(1920, 1040);
         }
     }
 }

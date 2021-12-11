@@ -4,12 +4,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using Allure.Commons;
 
 namespace TestProject1
 {
     public class Base
     {
-        protected IWebDriver driver;
+        public static IWebDriver driver;
         public IDictionary<string, object> vars { get; private set; }
         protected IJavaScriptExecutor js;
 
@@ -27,10 +28,12 @@ namespace TestProject1
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                string path = @"D:\LabsPoli\QA\Lab 4\res";
-                string imageName = $"results_{DateTime.Now:yyyy-MM-dd_HH-mm-ss.fffff}.png";
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                screenshot.SaveAsFile(path + imageName);
+                string imageName = TestContext.CurrentContext.Test.MethodName + "_screenshot_" + DateTime.Now.Ticks + ".png";
+                string path = $"D:\\LabsPoli\\TestResults\\{imageName}";
+
+                screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+                AllureLifecycle.Instance.AddAttachment(imageName, "image/png", path);
             }
 
             driver.Quit();

@@ -1,31 +1,41 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Allure.Steps;
+using OpenQA.Selenium;
 
 namespace TestProject1
 {
-    public class OwnerDetailsPage : Base
+    public class OwnerDetailsPage
     {
-        private IWebElement GoBackButton() => driver.FindElement(By.ClassName("goBack"));
+        private IWebDriver driver;
 
-        private IWebElement EditOwnerButton() => driver.FindElement(By.ClassName("editOwner"));
+        public OwnerDetailsPage(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+        private IWebElement GoBackButton() => driver.FindElement(By.CssSelector(".goBack"));
 
-        private IWebElement AddNewPetButton() => driver.FindElement(By.ClassName("addNewPet"));
+        private IWebElement EditOwnerButton() => driver.FindElement(By.CssSelector(".editOwner"));
 
+        private IWebElement AddNewPetButton() => driver.FindElement(By.CssSelector(".addNewPet"));
+
+        [AllureStep("Back to owners list page")]
         public OwnersListPage GoBack()
         {
             GoBackButton().Click();
-            return new OwnersListPage();
+            return new OwnersListPage(driver);
         }
 
+        [AllureStep("Edit owner")]
         public OwnerCreatePage EditOwner()
         {
             EditOwnerButton().Click();
-            return new OwnerCreatePage();
+            return new OwnerCreatePage(driver);
         }
 
+        [AllureStep("Add new pet to owner")]
         public PetCreatePage AddNewPet()
         {
             AddNewPetButton().Click();
-            return new PetCreatePage(this);
+            return new PetCreatePage(driver, this);
         }
     }
 }

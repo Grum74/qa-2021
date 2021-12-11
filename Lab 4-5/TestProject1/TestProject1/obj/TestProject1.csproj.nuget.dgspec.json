@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LabsPoli\\QA\\Lab 4\\TestProject1\\TestProject1\\TestProject1.csproj": {}
+    "D:\\LabsPoli\\QA\\Lab 4-5\\TestProject1\\TestProject1\\TestProject1.csproj": {}
   },
   "projects": {
-    "D:\\LabsPoli\\QA\\Lab 4\\TestProject1\\TestProject1\\TestProject1.csproj": {
+    "D:\\LabsPoli\\QA\\Lab 4-5\\TestProject1\\TestProject1\\TestProject1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LabsPoli\\QA\\Lab 4\\TestProject1\\TestProject1\\TestProject1.csproj",
+        "projectUniqueName": "D:\\LabsPoli\\QA\\Lab 4-5\\TestProject1\\TestProject1\\TestProject1.csproj",
         "projectName": "TestProject1",
-        "projectPath": "D:\\LabsPoli\\QA\\Lab 4\\TestProject1\\TestProject1\\TestProject1.csproj",
+        "projectPath": "D:\\LabsPoli\\QA\\Lab 4-5\\TestProject1\\TestProject1\\TestProject1.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\LabsPoli\\QA\\Lab 4\\TestProject1\\TestProject1\\obj\\",
+        "outputPath": "D:\\LabsPoli\\QA\\Lab 4-5\\TestProject1\\TestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +50,14 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.13.2, )"
+            },
+            "NUnit.Allure": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
+            "NUnit.Allure.Steps": {
+              "target": "Package",
+              "version": "[1.0.9, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",

@@ -1,9 +1,17 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Allure.Steps;
+using OpenQA.Selenium;
 
 namespace TestProject1
 {
-    public class OwnerCreatePage : Base
+    public class OwnerCreatePage
     {
+        private IWebDriver driver;
+
+        public OwnerCreatePage(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
         private IWebElement FirstNameField() => driver.FindElement(By.Id("firstName"));
 
         private IWebElement LastNameField() => driver.FindElement(By.Id("lastName"));
@@ -18,42 +26,49 @@ namespace TestProject1
 
         private IWebElement UpdateOwnerButton() => driver.FindElement(By.CssSelector(".updateOwner"));
 
+        [AllureStep("Type owner's firsname")]
         public OwnerCreatePage TypeFirstname(string firstName)
         {
-            FirstNameField().SendKeys(firstName);
+            Helpers.ClearAndType(FirstNameField(), firstName);
             return this;
         }
 
+        [AllureStep("Type owner's lastname")]
         public OwnerCreatePage TypeLastname(string lastName)
         {
-            LastNameField().SendKeys(lastName);
+            Helpers.ClearAndType(LastNameField(), lastName);
             return this;
         }
 
+        [AllureStep("Type owner's address")]
         public OwnerCreatePage TypeAddress(string address)
         {
-            AddressField().SendKeys(address);
+            Helpers.ClearAndType(AddressField(), address);
             return this;
         }
 
+        [AllureStep("Type owner's city")]
         public OwnerCreatePage TypeCity(string city)
         {
-            CityField().SendKeys(city);
+            Helpers.ClearAndType(CityField(), city);
             return this;
         }
 
+        [AllureStep("Type owner's telephone")]
         public OwnerCreatePage TypeTelephone(string telephone)
         {
-            TelephoneField().SendKeys(telephone);
+            Helpers.ClearAndType(TelephoneField(), telephone);
             return this;
         }
 
+        [AllureStep("Sumbit add new owner")]
         public OwnersListPage AddOwner()
         {
             AddOwnerButton().Submit();
-            return new OwnersListPage();
+            return new OwnersListPage(driver);
         }
 
+        [AllureStep("Sumbit update owner")]
         public OwnerDetailsPage UpdateOwner(OwnerDetailsPage OwnerDetailsPage)
         {
             UpdateOwnerButton().Submit();
