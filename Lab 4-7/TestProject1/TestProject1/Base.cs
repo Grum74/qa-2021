@@ -36,7 +36,6 @@ namespace TestProject1
                 string path = $"D:\\LabsPoli\\TestResults\\{imageName}";
 
                 screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
-                AllureLifecycle.Instance.AddAttachment(imageName, "image/png", path);
             }
 
             driver.Quit();

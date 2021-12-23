@@ -26,21 +26,18 @@ namespace TestProject1
         private IWebElement TypeSelect() => driver.FindElement(By.Id("type"));
 
 
-        [AllureStep("Type pet name")]
         public PetCreatePage TypeName(string name)
         {
             Helpers.ClearAndType(NameField(), name);
             return this;
         }
 
-        [AllureStep("Type pet bitrh date")]
         public PetCreatePage TypeBitrhDate(string bitrhDate)
         {
             Helpers.ClearAndType(BirthDateField(), bitrhDate);
             return this;
         }
 
-        [AllureStep("Select pet type from the list")]
         public PetCreatePage SelectType(string option)
         {
             TypeSelect().Click();
@@ -48,14 +45,12 @@ namespace TestProject1
             return this;
         }
 
-        [AllureStep("Back to owner details page")]
         public OwnerDetailsPage GoBack()
         {
             GoBackButton().Click();
             return ownerDetailsPage;
         }
 
-        [AllureStep("Save new pet")]
         public OwnerDetailsPage SavePet()
         {
             SavePetButton().Click();

@@ -10,7 +10,6 @@ namespace TestProject1
     public class TestCases : Base
     {
         [Test, Description("This test checks the opening of the main page by clicking on the logo")]
-        [AllureSuite("Main page")]
         public void Mainpage()
         {
             driver.FindElement(By.CssSelector(".navbar-brand > span")).Click();
@@ -18,7 +17,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks the new owner adding")]
-        [AllureSuite("Owner")]
         public void Addnewowner()
         {
             Pages.NavBar.OpenCreateOwnerPage();
@@ -29,7 +27,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create owners form validation")]
-        [AllureSuite("Owner")]
         public void Addnewownerwithemptyfield()
         {
             Pages.NavBar.OpenCreateOwnerPage();
@@ -47,7 +44,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create owners form validation")]
-        [AllureSuite("Owner")]
         [TestCaseSource(typeof(TestDataClass), nameof(TestDataClass.PhoneTestData))]
         public void Addnewownerwithwrongformat(string phoneNumber)
         {
@@ -58,7 +54,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create owners form validation")]
-        [AllureSuite("Owner")]
         [TestCaseSource(typeof(TestDataClass), nameof(TestDataClass.JsInjectionTestData))]
         public void Addnewownerwithjsinjection(string jsInjection)
         {
@@ -69,7 +64,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks the new pet adding")]
-        [AllureSuite("Pet")]
         public void Addnewpet()
         {
             Pages.NavBar.OpenOwnerList();
@@ -81,7 +75,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create pet form validation")]
-        [AllureSuite("Pet")]
         public void Addnewpetwithemptyfield()
         {
             Pages.NavBar.OpenOwnerList();
@@ -97,7 +90,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create pet form validation")]
-        [AllureSuite("Pet")]
         [TestCaseSource(typeof(TestDataClass), nameof(TestDataClass.DateTestData))]
         public void Birthdatefieldvalidationonaddnewpetform(string date)
         {
@@ -110,7 +102,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks the new visit adding")]
-        [AllureSuite("Pet")]
         public void Testaddnewvisit()
         {
             driver.FindElement(By.CssSelector(".ownerTab")).Click();
@@ -129,7 +120,6 @@ namespace TestProject1
         }
 
         [Test, Description("This test checks create visit form validation")]
-        [AllureSuite("Pet")]
         public void Testaddnewvisitformvalidation()
         {
             driver.FindElement(By.CssSelector(".ownerTab")).Click();

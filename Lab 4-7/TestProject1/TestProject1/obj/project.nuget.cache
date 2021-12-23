@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dgXmoIeyDqZwOgYEDr1hie3oZFsMhTMWN1MT7bytk2yLoRo7zujbUYT0mfKFFXzg4mJ0dy+rj9IFbikcJ18c8g==",
+  "dgSpecHash": "mJ29i34v8ada61UbO6Z4h+D4hvn1j3Zj6VhRmWRbFqoQsFRBS31SNO5YsYfyqv9SIgtfMiwJbzxE76KXDwVREQ==",
   "success": true,
-  "projectFilePath": "D:\\LabsPoli\\QA\\Lab 4-6\\TestProject1\\TestProject1\\TestProject1.csproj",
+  "projectFilePath": "D:\\LabsPoli\\QA\\Lab 4-7\\TestProject1\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\allure.commons\\3.5.0.4\\allure.commons.3.5.0.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\aspectinjector\\2.3.1\\aspectinjector.2.3.1.nupkg.sha512",

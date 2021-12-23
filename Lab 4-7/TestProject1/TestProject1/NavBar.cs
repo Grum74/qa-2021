@@ -20,7 +20,6 @@ namespace TestProject1
 
         private IWebElement OwnerListButton() => driver.FindElement(By.CssSelector(".open li:nth-child(1) > a"));
 
-        [AllureStep("Open owners list page")]
         public OwnersListPage OpenOwnerList()
         {
             OwnerTab().Click();
@@ -30,7 +29,6 @@ namespace TestProject1
             return new OwnersListPage(driver);
         }
 
-        [AllureStep("Open owners create page")]
         public OwnerCreatePage OpenCreateOwnerPage()
         {
             OwnerTab().Click();

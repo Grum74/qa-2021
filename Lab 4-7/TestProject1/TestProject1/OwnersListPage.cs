@@ -16,14 +16,12 @@ namespace TestProject1
 
         private IWebElement OwnerPageLink(string linkText) => driver.FindElement(By.LinkText(linkText));
 
-        [AllureStep("Add new owner")]
         public OwnerCreatePage AddOwner()
         {
             AddOwnerButton().Submit();
             return new OwnerCreatePage(driver);
         }
 
-        [AllureStep("Open owners detail page")]
         public OwnerDetailsPage OpenOwnerPage(string linkText)
         {
             OwnerPageLink(linkText).Click();

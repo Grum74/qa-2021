@@ -1483,11 +1483,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LabsPoli\\QA\\Lab 4-6\\TestProject1\\TestProject1\\TestProject1.csproj",
+      "projectUniqueName": "D:\\LabsPoli\\QA\\Lab 4-7\\TestProject1\\TestProject1\\TestProject1.csproj",
       "projectName": "TestProject1",
-      "projectPath": "D:\\LabsPoli\\QA\\Lab 4-6\\TestProject1\\TestProject1\\TestProject1.csproj",
+      "projectPath": "D:\\LabsPoli\\QA\\Lab 4-7\\TestProject1\\TestProject1\\TestProject1.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\LabsPoli\\QA\\Lab 4-6\\TestProject1\\TestProject1\\obj\\",
+      "outputPath": "D:\\LabsPoli\\QA\\Lab 4-7\\TestProject1\\TestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"

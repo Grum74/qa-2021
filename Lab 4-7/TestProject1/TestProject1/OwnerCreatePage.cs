@@ -26,52 +26,45 @@ namespace TestProject1
 
         private IWebElement UpdateOwnerButton() => driver.FindElement(By.CssSelector(".updateOwner"));
 
-        [AllureStep("Type owner's firsname")]
         public OwnerCreatePage TypeFirstname(string firstName)
         {
             Helpers.ClearAndType(FirstNameField(), firstName);
             return this;
         }
 
-        [AllureStep("Type owner's lastname")]
         public OwnerCreatePage TypeLastname(string lastName)
         {
             Helpers.ClearAndType(LastNameField(), lastName);
             return this;
         }
 
-        [AllureStep("Type owner's address")]
         public OwnerCreatePage TypeAddress(string address)
         {
             Helpers.ClearAndType(AddressField(), address);
             return this;
         }
 
-        [AllureStep("Type owner's city")]
         public OwnerCreatePage TypeCity(string city)
         {
             Helpers.ClearAndType(CityField(), city);
             return this;
         }
 
-        [AllureStep("Type owner's telephone")]
         public OwnerCreatePage TypeTelephone(string telephone)
         {
             Helpers.ClearAndType(TelephoneField(), telephone);
             return this;
         }
 
-        [AllureStep("Sumbit add new owner")]
         public OwnersListPage AddOwner()
         {
-            AddOwnerButton().Submit();
+            AddOwnerButton().Click();
             return new OwnersListPage(driver);
         }
 
-        [AllureStep("Sumbit update owner")]
         public OwnerDetailsPage UpdateOwner(OwnerDetailsPage OwnerDetailsPage)
         {
-            UpdateOwnerButton().Submit();
+            UpdateOwnerButton().Click();
             return OwnerDetailsPage;
         }
     }

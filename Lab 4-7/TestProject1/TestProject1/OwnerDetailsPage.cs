@@ -17,21 +17,18 @@ namespace TestProject1
 
         private IWebElement AddNewPetButton() => driver.FindElement(By.CssSelector(".addNewPet"));
 
-        [AllureStep("Back to owners list page")]
         public OwnersListPage GoBack()
         {
             GoBackButton().Click();
             return new OwnersListPage(driver);
         }
 
-        [AllureStep("Edit owner")]
         public OwnerCreatePage EditOwner()
         {
             EditOwnerButton().Click();
             return new OwnerCreatePage(driver);
         }
 
-        [AllureStep("Add new pet to owner")]
         public PetCreatePage AddNewPet()
         {
             AddNewPetButton().Click();
